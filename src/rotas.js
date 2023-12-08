@@ -4,4 +4,6 @@ const rotas = express();
 
 rotas.post('/usuarios', cadastrarUsuario);
 
+rotas.get('/', cadastrarUsuario);
+
 module.exports = rotas;
