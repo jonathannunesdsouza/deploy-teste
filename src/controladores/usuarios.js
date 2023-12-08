@@ -21,7 +21,7 @@ const listarUsuarios = async (req, res) => {
 
     try {
 
-        const usuarios = await knex('usuarios').select('id', 'nome', 'email');
+        const usuarios = await knex.select('id', 'nome', 'email').from('usuarios');
 
         return res.status(200).json(usuarios);
         
@@ -32,5 +32,6 @@ const listarUsuarios = async (req, res) => {
 }
 
 module.exports = {
-    cadastrarUsuario
+    cadastrarUsuario,
+    listarUsuarios
 }
